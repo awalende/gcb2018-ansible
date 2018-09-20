@@ -1,0 +1,43 @@
+---
+# This file contains a list of task for this role.
+
+# For installing kraken, we need to do multiple tasks:
+#   - Install essential packages for compiling source code.
+#   - Clone the Kraken source code repository from github
+#   - Build Kraken
+
+
+# Very helpful for this task is the ansible index, which lists all ansible modules with examples:
+# https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
+
+
+# For this module you should check out the apt module.
+# In these 3 Tasks we want to install the apt packages called "build-essential", "make" and "libgomp1"
+- name: Install build-essential for getting all the good compiling tools
+  apt:
+
+- name: Install make, which actually compiles everything for us
+  apt:
+
+- name: Install libgomp1, which is a needed library for kraken
+  apt:
+
+
+# Now we want to get the source code for kraken from github.
+# For this, ansible provides the git module.
+# The repo is located at https://github.com/DerrickWood/kraken.git
+# We want to save the source code in /home/ubuntu/kraken_src/
+- name: Clone kraken repo to home
+  git:
+
+
+
+# After that has been finished, we finally want to install kraken..
+# For this we execute the provided shell script by kraken.
+#
+- name: Install kraken to /usr/local/bin
+  shell: "sh install_kraken.sh /usr/local/bin/"
+  args:
+    chdir: "{{ home_path }}/kraken_src/"
+    creates: "/usr/local/bin/kraken"

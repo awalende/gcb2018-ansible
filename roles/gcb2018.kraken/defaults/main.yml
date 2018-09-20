@@ -1,0 +1,5 @@
+---
+# This file contains default variables which can be used by jinja2-templating.
+# We want to set the home_path variable to the standard ubuntu user path.
+
+home_path:

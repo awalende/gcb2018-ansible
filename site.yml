@@ -1,0 +1,10 @@
+---
+
+# This is the main playbook which includes our kraken role.
+# You will need to fill in the missing fields.
+# Hint: Kraken needs to be installed on every node. For this we will need sudo rights.
+
+- hosts:
+  become:
+  roles:
+    -

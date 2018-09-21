@@ -1,7 +1,8 @@
 ---
-
+####################### TASK 1 ###############################
 # This is the main playbook which includes our kraken role.
 # You will need to fill in the missing fields.
+# The needed role lies in the subfolder roles/
 # Hint: Kraken needs to be installed on every node. For this we will need sudo rights.
 
 - hosts:
@@ -10,7 +11,13 @@
     -
 
 
+###############################################################
 
+
+
+
+
+###################### TASK 3 #################################
 
 # Here we will include a Module downloaded by Ansible Galaxy.
 # We want to download the public role "awalende.krona" from Ansible Galaxy and install it only on the master host.
@@ -23,6 +30,9 @@
 #  roles:
 #    -
 
+
+
+###############################################################
 
 
 #dont edit this below

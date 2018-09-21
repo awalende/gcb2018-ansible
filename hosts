@@ -1,4 +1,9 @@
+################## TASK 0 ###########################
+
+
 # You will need to create your host inventory file here.
 # Since our environment has been created with bibigrid, we can simply steal it
 # from there. The bibigrid hosts file is located in /home/ubuntu/playbook/ansible_hosts
 # Simply copy the contents of this file to here.
+# If you want to test it, simply run:
+# ansible all -i hosts -m ping

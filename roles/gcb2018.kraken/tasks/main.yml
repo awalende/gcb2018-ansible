@@ -1,4 +1,7 @@
 ---
+
+
+################ TASK 2 ######################################
 # This file contains a list of task for this role.
 
 # For installing kraken, we need to do multiple tasks:
@@ -42,5 +45,5 @@
 - name: Install kraken to /usr/local/bin
   shell: "sh install_kraken.sh /usr/local/bin/"
   args:
-    chdir: "{{ home_path }}/kraken_src/"
+    chdir: "/home/ubuntu/kraken_src/"
     creates: "/usr/local/bin/kraken"

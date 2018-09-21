@@ -35,7 +35,10 @@
 
 # After that has been finished, we finally want to install kraken..
 # For this we execute the provided shell script by kraken.
-#
+# The shell module simply takes a shell command like you would type it in in your bash terminal.
+# The additional args field gives various options:
+#   - chdir changes the current directory to the specified path
+#   - creates implies, that ansible should not execute this task, when the specified file already exists (idempotence)
 - name: Install kraken to /usr/local/bin
   shell: "sh install_kraken.sh /usr/local/bin/"
   args:

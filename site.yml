@@ -8,3 +8,29 @@
   become:
   roles:
     -
+
+
+
+
+# Here we will include a Module downloaded by Ansible Galaxy.
+# We want to download the public role "awalende.krona" from Ansible Galaxy and install it only on the master host.
+# Installing roles from Ansible Galaxy is very easy. This is done via the command line tool ansible-galaxy.
+# After installing, you can simply add the role to the roles list below.
+# Additional Infos on downloading roles: https://galaxy.ansible.com/docs/using/installing.html
+
+#- hosts:
+#  become:
+#  roles:
+#    -
+
+
+
+#dont edit this below
+- hosts: master
+  become: true
+  tasks:
+    - name: Add vol scratch for master node
+      file:
+        path: /vol/scratch/
+        state: directory
+        mode: 0777
